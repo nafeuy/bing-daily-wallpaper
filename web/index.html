@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>必应每日一图 UHD</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { min-height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: end start;
+        min-height: 100vh;
+        color: white;
+        background: #111 url("./bing-daily-uhd.jpg") center / cover fixed no-repeat;
+        font: 16px/1.5 system-ui, sans-serif;
+      }
+      main {
+        width: 100%;
+        padding: clamp(1.25rem, 5vw, 4rem);
+        background: linear-gradient(transparent, rgb(0 0 0 / 75%));
+        text-shadow: 0 1px 3px black;
+      }
+      h1 { margin: 0 0 .35rem; font-size: clamp(1.5rem, 4vw, 3rem); }
+      p { margin: .3rem 0; }
+      a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">必应每日一图 UHD</h1>
+      <p id="copyright"></p>
+      <p><a href="./bing-daily-uhd.jpg">打开固定图片链接</a> · <a href="./info.json">查看 JSON</a></p>
+    </main>
+    <script>
+      fetch("./info.json")
+        .then((response) => response.json())
+        .then((info) => {
+          document.querySelector("#title").textContent = info.title || "必应每日一图 UHD";
+          document.querySelector("#copyright").textContent = info.copyright || "";
+        });
+    </script>
+  </body>
+</html>
