@@ -20,8 +20,8 @@ GitHub Actions 每天北京时间 03:00（UTC 前一天 19:00）运行，也支�
 3. 生成静态页面和 `info.json`；
 4. 使用 GitHub 官方 Pages Actions 部署 `_site`。
 
-首次使用时，请在仓库的 **Settings → Pages → Build and deployment → Source** 中选择
-**GitHub Actions**，然后在 Actions 页面手动运行一次 “Update Bing daily UHD wallpaper”。
+首次部署时，工作流会尝试自动启用 GitHub Pages。如果仓库或组织策略禁止自动启用，
+请在 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
 
 ## 本地构建
 
